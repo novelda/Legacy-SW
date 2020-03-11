@@ -1,19 +1,11 @@
 # ModuleConnector-Examples
-This repo contains latest CPP/PYTHON/MATLAB examples for ModuleConnector based XeThru moudle development.
-New version ModuleConnector will contain latest examples from this repository when it is released. 
-
-ModuleConnector download address:
-
-https://www.xethru.com/community/resources/module-connector-windows.78/
-https://www.xethru.com/community/resources/module-connector-unix.80/
-https://www.xethru.com/community/resources/module-connector-macos.79/
-https://www.xethru.com/community/resources/module-connector-raspberry-pi.81/
+This repo contains latest CPP/PYTHON/MATLAB examples for ModuleConnector.
 
 There is one application note intruducing how to use Module Connector:
-https://www.xethru.com/community/resources/xethru-sensors-introduction.111/
+https://github.com/novelda/Legacy-Documentation/blob/master/Application-Notes/XTAN-06_XeThruSensorsIntroduction_rev_a.pdf
 
 Please make sure your sensor are running latest firmware. It can be updated from the latest XeThru Explorer:
-https://www.xethru.com/community/resources/categories/xethru-explorer.3/
+https://github.com/novelda/XeThru-Explorer
 
 # Example Folder Structure
 
