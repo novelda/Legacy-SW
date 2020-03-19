@@ -73,7 +73,3 @@ https://github.com/novelda/XeThru-Explorer
 * [x4m2x0_plot_sleep_csv_recording_file.py](./PYTHON/x4m2x0_plot_sleep_csv_recording_file.py)
 * [x4m2x0_plot_vitalsigns_csv_recording_file.py](./PYTHON/x4m2x0_plot_vitalsigns_csv_recording_file.py)
 
-# Repository Address
-Latest ModuleConnector examples can be found at:
-* [Github Repo](https://github.com/xethru/XeThru_ModuleConnector_Examples.git)
-* [Azure Repo](https://dev.azure.com/xethru/XeThruApps/_git/XeThru_ModuleConnector_Examples)
