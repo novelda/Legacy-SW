@@ -3,12 +3,12 @@
 #ifndef _VERSION_H_
 #define _VERSION_H_
 #define X4C51FW_PRODUCT_NAME "X4C51"
-#define X4C51FW_VERSION_STRING "2.0.0"
+#define X4C51FW_VERSION_STRING "2.1.0"
 
 #define PRODUCT_NAME  "XEP"
 #define MAJOR_VERSION 3
 #define MINOR_VERSION 4
-#define PATCH_VERSION 7
+#define PATCH_VERSION 8
 #define PRE_RELEASE_VERSION ""
 
 #define xstr(s) str(s)
