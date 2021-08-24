@@ -899,39 +899,27 @@ int x4driver_setup_default(X4Driver_t* x4driver)
         return XEP_ERROR_X4DRIVER_COMMON_PLL_LOCK_FAIL;
 
     //Enable TX PLL
-    status = x4driver_set_pif_register(x4driver, ADDR_PIF_TX_PLL_CTRL_2_RW, 3);
+    has_lock = 0;
+    status = _x4driver_set_x4_sw_action(x4driver, 15);
     if (status != XEP_ERROR_X4DRIVER_OK) return status;
 
-    timeout = PLL_LOCK_ATTEMPS_MAX;
-    has_lock = 0;
-    do {
-        status = x4driver_get_pif_register(x4driver, ADDR_PIF_TX_PLL_STATUS_R, &pll_status);
-        if (status != XEP_ERROR_X4DRIVER_OK) return status;
-        if ((pll_status & 0x80) != 0) {
-            has_lock = 1;
-            break;
-        }
-        x4driver->callbacks.wait_us(10);
-    } while (timeout--);
+    status = x4driver_get_pif_register(x4driver, ADDR_PIF_TX_PLL_STATUS_R,
+                                           &pll_status);
+    if (status == XEP_ERROR_X4DRIVER_OK)
+        has_lock = pll_status & 0x80;
 
     if (!has_lock)
         return XEP_ERROR_X4DRIVER_TX_PLL_LOCK_FAIL;
 
     //Enable RX PLL
-    status = x4driver_set_pif_register(x4driver, ADDR_PIF_RX_PLL_CTRL_2_RW, 3);
+    has_lock = 0;
+    status = _x4driver_set_x4_sw_action(x4driver, 16);
     if (status != XEP_ERROR_X4DRIVER_OK) return status;
 
-    timeout = PLL_LOCK_ATTEMPS_MAX;
-    has_lock = 0;
-    do {
-        status = x4driver_get_pif_register(x4driver, ADDR_PIF_RX_PLL_STATUS_R, &pll_status);
-        if (status != XEP_ERROR_X4DRIVER_OK) return status;
-        if ((pll_status & 0x80) != 0) {
-            has_lock = 1;
-            break;
-        }
-        x4driver->callbacks.wait_us(10);
-    } while (timeout--);
+    status = x4driver_get_pif_register(x4driver, ADDR_PIF_RX_PLL_STATUS_R,
+                                           &pll_status);
+    if (status == XEP_ERROR_X4DRIVER_OK)
+        has_lock = pll_status & 0x80;
 
     if (!has_lock)
         return XEP_ERROR_X4DRIVER_RX_PLL_LOCK_FAIL;
